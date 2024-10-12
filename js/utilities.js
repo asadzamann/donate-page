@@ -1,14 +1,15 @@
 // donation section utilities
-function updateBalance(buttonId, inputId, campaignBalanceID, donationName) {
+function updateBalance(buttonId, inputId, campaignBalanceID, donationName, modal) {
     document.getElementById(buttonId)
         .addEventListener('click', function (event) {
             event.preventDefault();
-            const input = document.getElementById(inputId).value;
-            const inputNumber = parseFloat(input);
+            const input = document.getElementById(inputId);
+            const inputNumber = parseFloat(input.value);
             const campaignBalance = document.getElementById(campaignBalanceID);
+            const totalCampaignBalance = parseFloat(campaignBalance.innerText) + inputNumber;
             const nameDonation = document.getElementById(donationName).innerText
             if (!isNaN(inputNumber) && inputNumber > 0) {
-                campaignBalance.innerText = inputNumber;
+                campaignBalance.innerText = totalCampaignBalance;
             }
             else {
                 alert('Invalid Amount')
@@ -20,7 +21,6 @@ function updateBalance(buttonId, inputId, campaignBalanceID, donationName) {
             const newBalance = availableBalance - inputNumber;
             if (newBalance >= 0) {
                 balance.innerText = newBalance;
-                alert('Your new balance: ' + balance.innerText)
                 // add to history
                 const div = document.createElement('div');
                 div.innerHTML = `
@@ -35,16 +35,26 @@ function updateBalance(buttonId, inputId, campaignBalanceID, donationName) {
               </div>`
 
                 document.getElementById('history-container').appendChild(div);
+
+                // show modal
+                document.getElementById(modal).showModal();
             }
             else {
                 alert('Insufficient Balance')
             }
         })
 }
-// toggle feature
+// show section by id after clicking button
 function showSectionById(id){
     document.getElementById('donation-section').classList.add('hidden');
     document.getElementById('history-section').classList.add('hidden');
     // show section
-    document.getElementById(id).classList.remove('hidden')
+    document.getElementById(id).classList.remove('hidden');
+}
+function colorChange(id){
+// button color change
+document.getElementById('donation-button').classList.remove('bg-lime-300');
+document.getElementById('history-button').classList.remove('bg-lime-300');
+// color change after click
+document.getElementById(id).classList.add('bg-lime-300');
 }
