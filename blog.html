@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/5fbeb7b023.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="backdrop-blur-md sticky top-0 z-50 mb-10">
+        <!-- navbar starts -->
+        <div class="bg-amber-50">
+            <nav>
+                <div class="flex justify-between navbar md:w-10/12 md:mx-auto">
+                    <div class="">
+                        <div>
+                            <button id="home-button" class="btn bg-lime-300 font-bold mr-8">Home</button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <img src="assets/logo.png" alt="logo">
+                        <h2 class="m-2 font-bold text-xl">Donate Bangladesh</h2>
+                    </div>
+                    <div class="">
+                        <div class="flex">
+                            <img src="assets/coin.png" alt="">
+                            <p class="text-gray-500 font-bold"><span id="available-balance">5500</span> BDT</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- navbar ends -->
+    </header>
+    <main class="w-10/12 mx-auto">
+        <h1 class="text-4xl font-extrabold mb-4">Important FAQ <i class="fa-solid fa-question"></i></h1>
+        <!-- Questions Starts -->
+        <!-- Question 1 -->
+        <div class="collapse collapse-arrow bg-white-200 border border-blue-100">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the document object model (DOM)?</div>
+            <div class="collapse-content">
+                <p>The Document Object Model is a cross-platform and language-independent interface that treats an HTML
+                    or XML document as a tree structure wherein each node is an object representing a part of the
+                    document. The DOM represents a document with a logical tree. </p>
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="collapse collapse-arrow bg-white-200 border border-blue-100">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">How do you select element from DOM?</div>
+            <div class="collapse-content">
+                <p>Since element IDs are required to be unique if specified, they're a useful way to get access to a
+                    specific element quickly. If you need to get access to an element which doesn't have an ID, you can
+                    use querySelector() to find the element using any selector.</p>
+            </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="collapse collapse-arrow bg-white-200 border border-blue-100">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why
+                is it helpful?</div>
+            <div class="collapse-content">
+                <p>Event delegation is a technique in the DOM where a single event listener is added to a parent element
+                    to manage events for multiple child elements. Instead of adding individual listeners to each child,
+                    the parent element listens for events that bubble up from its children, and then determines which
+                    child triggered the event.
+                    <br>
+                    <br>
+                    <b>Why is it helpful?</b>
+                    <br>
+                    Improves performance by reducing the number of event listeners.
+                    Simplifies code, especially when managing many dynamic elements.
+                    Easier maintenance, as new child elements can be managed without adding extra listeners.
+                    Event delegation leverages event bubbling, where events propagate from the target element up to the
+                    parent elements.
+                </p>
+            </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="collapse collapse-arrow bg-white-200 border border-blue-100 mb-10">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles
+                using the DOM?</div>
+            <div class="collapse-content">
+                <p>
+                    <b>To manipulate an element's attributes and styles using the DOM:</b>
+                    <br> <br>
+                    Select the Element: <br> Use methods like document.getElementById() or document.querySelector().
+                    Change Attributes: <br>
+                    Use element.setAttribute('attributeName', 'value') to set an attribute. <br>
+                    Use element.getAttribute('attributeName') to get an attribute. <br>
+                    Use element.removeAttribute('attributeName') to remove an attribute. <br><br>
+                    Change Styles: <br>
+                    Use element.style.propertyName = 'value' to set a style. <br>
+                    Example: element.style.backgroundColor = 'red'. <br>
+                    These methods let you dynamically modify elements in the document.
+                </p>
+            </div>
+        </div>
+
+        <!-- Questions Ends -->
+    </main>
+    <footer class="bg-amber-50">
+        <div class="flex items-center justify-center p-16">
+            <p>Copyright © 2024 - All right reserved</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('home-button').addEventListener('click', function () {
+            window.location.href = '/index.html'
+        })
+    </script>
+</body>
+
+</html>

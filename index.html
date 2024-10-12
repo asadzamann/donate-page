@@ -19,10 +19,10 @@
         <!-- navbar starts -->
         <div class="bg-amber-50">
             <nav>
-                <div class="flex justify-between navbar w-10/12 mx-auto">
-                    <div class="sm:hidden md:block">
+                <div class="flex justify-between navbar md:w-10/12 md:mx-auto">
+                    <div class="">
                         <div>
-                            <button class="hidden md:block btn bg-lime-300 font-bold">Blog</button>
+                            <button id="blog-button" class="btn bg-lime-300 font-bold mr-8">Blog</button>
                         </div>
                     </div>
                     <div class="">
@@ -43,8 +43,8 @@
         <!-- Button Section Starts -->
         <section class="flex justify-center gap-4 mt-10 pb-5">
             <button id="donation-button"
-                class="btn hover:bg-lime-300 bg-lime-300 bg-gray-300 font-bold">Donation</button>
-            <button id="history-button" class="btn hover:bg-lime-300 bg-gray-300 font-bold">History</button>
+                class="btn bg-lime-300 bg-gray-300 font-bold">Donation</button>
+            <button id="history-button" class="btn bg-gray-300 font-bold">History</button>
         </section>
         <!-- Button Section Ends -->
 
@@ -220,6 +220,11 @@
             <p>Copyright © 2024 - All right reserved</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('blog-button').addEventListener('click', function () {
+            window.location.href = '/blog.html'
+        })
+    </script>
     <script src="js/toggle.js"></script>
     <script src="js/utilities.js"></script>
     <script src="js/features.js"></script>
